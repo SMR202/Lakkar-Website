@@ -10,7 +10,9 @@ Production: `npm run build`, then `npm start`. Set `PUBLIC_ORIGIN` to the exact 
 
 ## Store controls
 
-The native workbook is https://docs.google.com/spreadsheets/d/1PhOFMqxHTt4jx1VHDifQXwLCEKDFGgtgy3jf2oD6Ed0/edit
+The client-owned workbook is https://docs.google.com/spreadsheets/d/1tObrHsNbHcuIusfo0NOGEVhx9W9vutLyjI8s2FYf74k/edit
+
+Its prepared gateway editor is https://script.google.com/home/projects/1riV_cPw8WqjLhLGXz4wj5OfFZximlJSmuvAN0tA7jV0hn7ZBGyXVER5a/edit
 
 - **Products:** stable unique `id`, `name`, `category`, integer `price`, total `stock` capacity, HTTPS `image`, `description`, `dimensions`, `care`, `active` boolean. Images may be hosted on Cloudinary or another HTTPS host. An inactive sample row is included.
 - **Delivery:** unique `id`, display `name`, integer `fee`, matching `city`. The checkout city must match the delivery area's city. Fee 0 is supported.
@@ -22,8 +24,8 @@ Stock is **total capacity**, not remaining stock: if ten pieces were offered and
 ## Connect Google Sheets (one-time owner setup)
 
 1. In the workbook, open **Extensions → Apps Script** and paste `google-apps-script/Code.gs`.
-2. In Apps Script Project Settings → Script properties, add `GATEWAY_SECRET` with a random 32-byte-or-longer secret. Store the same value in the hosting environment as `SHEETS_GATEWAY_SECRET`; never put it in Sheet cells or client code.
-3. Run `setup` once. Authorize Spreadsheet, Mail and trigger access. It records the workbook ID and installs a five-minute notification trigger. The owner must complete Google's authorization; this repository cannot grant that access.
+2. The owner runs `setup` once. It automatically generates a private `GATEWAY_SECRET` when missing or binding a copied Sheet; repeat runs preserve the existing key. No manual secret creation is needed.
+3. Authorize Spreadsheet, Mail and trigger access under the client account. Setup records the workbook ID and installs a five-minute notification trigger. The developer then copies `GATEWAY_SECRET` from Project Settings → Script properties into the sensitive hosting variable `SHEETS_GATEWAY_SECRET`. Never put it in Sheet cells, source control or client code.
 4. Deploy as a **Web app**, execute as the owner, allow **Anyone** to call the gateway. The gateway requires the secret on every request; the workbook itself stays private. Set the resulting `/exec` URL as `SHEETS_GATEWAY_URL` on the server. Deployment access must be allowed by the owner's Google Workspace policy.
 5. Fill verified products, fees, contacts and policies. Set server `ORDERS_ENABLED=true` and Sheet `ordersEnabled=true` only when ready. The two switches prevent accidentally opening a preview. Redeploy Apps Script after changing its code.
 6. Place one real smoke-test order, verify the private order row, email receipt, stock reduction and both WhatsApp links. Cancel the test order through its status cell. This live Google authorization/write/mail check remains required; local tests use a Sheets service harness.

@@ -8,7 +8,9 @@ function setup() {
 
  Object.keys(tables).forEach(n=>{if(!s.getSheetByName(n)){const sh=s.insertSheet(n);sh.appendRow(tables[n]);sh.setFrozenRows(1);}});
 
- PropertiesService.getScriptProperties().setProperty('SHEET_ID',s.getId());
+ const properties=PropertiesService.getScriptProperties();
+ if(!properties.getProperty('GATEWAY_SECRET')||properties.getProperty('SHEET_ID')!==s.getId())properties.setProperty('GATEWAY_SECRET',Utilities.getUuid().replace(/-/g,'')+Utilities.getUuid().replace(/-/g,''));
+ properties.setProperty('SHEET_ID',s.getId());
 
  if(!ScriptApp.getProjectTriggers().some(t=>t.getHandlerFunction()==='sendPendingEmails'))ScriptApp.newTrigger('sendPendingEmails').timeBased().everyMinutes(5).create();
 
