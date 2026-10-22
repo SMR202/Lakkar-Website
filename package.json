@@ -1,0 +1,34 @@
+{
+  "name": "lakkar-home",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "tsc --noEmit && next build",
+    "start": "next start --hostname 0.0.0.0",
+    "test": "tsx --test tests/*.test.ts",
+    "test:e2e": "playwright test",
+    "format": "prettier --write src server app tests *.ts *.json *.md",
+    "format:check": "prettier --check src server app tests *.ts *.json *.md"
+  },
+  "dependencies": {
+    "@fontsource/dm-sans": "latest",
+    "@fontsource/cormorant-garamond": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "zod": "latest",
+    "next": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest",
+    "tsx": "latest",
+    "@playwright/test": "latest",
+    "prettier": "latest",
+    "@axe-core/playwright": "latest"
+  }
+}
