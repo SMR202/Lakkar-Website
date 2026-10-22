@@ -12,6 +12,8 @@ import {
   ArrowUpRight,
   Check,
   Trash2,
+  Truck,
+  MessageCircle,
 } from "lucide-react";
 
 import "@fontsource/cormorant-garamond/400.css";
@@ -37,8 +39,8 @@ function Photo({
       alt={alt}
       {...props}
       onError={(e) => {
-        if (!e.currentTarget.src.endsWith("/furniture-room.jpg"))
-          e.currentTarget.src = "/furniture-room.jpg";
+        if (!e.currentTarget.src.endsWith("/furniture-hero-v2.webp"))
+          e.currentTarget.src = "/furniture-hero-v2.webp";
       }}
     />
   );
@@ -338,8 +340,8 @@ export default function App() {
         <section className="hero">
           <Photo
             className="hero-image"
-            src={site("heroImage", "/furniture-room.jpg")}
-            alt="Lakkar Home upholstered seating in a warm interior"
+            src={site("heroImage", "/furniture-hero-v2.webp")}
+            alt="A sunlit living room with sculptural walnut and upholstered furniture"
             fetchPriority="high"
           />
           <div className="hero-copy">
@@ -358,9 +360,14 @@ export default function App() {
         </section>
 
         <div className="service-line">
-          <span>Made for everyday living</span>
-          <span>Cash on delivery</span>
-          <span>A personal touch, on WhatsApp</span>
+          <span>
+            <Truck size={17} aria-hidden="true" />
+            Cash on delivery
+          </span>
+          <span>
+            <MessageCircle size={17} aria-hidden="true" />
+            Personal assistance on WhatsApp
+          </span>
         </div>
 
         <section id="collection" className="collection">
@@ -507,8 +514,8 @@ export default function App() {
         <section className="story" id="story">
           <div className="story-photo">
             <Photo
-              src={site("storyImage", "/furniture-table.jpg")}
-              alt="Lakkar Home round coffee table in a living room"
+              src={site("storyImage", "/furniture-story-v2.webp")}
+              alt="Walnut coffee table and lounge seating in a calm interior"
               loading="lazy"
             />
           </div>
@@ -700,7 +707,7 @@ export default function App() {
                   {lines.map((i) => (
                     <div className="bag-line" key={i.id}>
                       <Photo
-                        src={i.product?.image || "/furniture-room.jpg"}
+                        src={i.product?.image || "/furniture-hero-v2.webp"}
                         alt={i.product?.name || "Unavailable piece"}
                       />
                       <div>

@@ -8,7 +8,7 @@ export const sample: Catalog = {
     heroTitle: "Furniture for\nthe way you live.",
     heroText:
       "Distinctive tables, considered seating, and furniture that makes a room your own.",
-    heroImage: "/furniture-room.jpg",
+    heroImage: "/furniture-hero-v2.webp",
     logo: "/logo.jpeg",
     instagram: "https://www.instagram.com/lakkar.home/",
     announcement: "Furniture with character.",
@@ -18,7 +18,7 @@ export const sample: Catalog = {
     storyTitle: "A room comes together, piece by piece.",
     storyText:
       "A coffee table to gather around. A chair for your quiet corner. A bed to come home to. Discover furniture that brings comfort and character to your space.",
-    storyImage: "/furniture-table.jpg",
+    storyImage: "/furniture-story-v2.webp",
     tagline: "Furniture for a home that feels like you.",
   },
   whatsapp: "",
