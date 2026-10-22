@@ -1,6 +1,6 @@
 ---
 name: Lakkar Home
-description: Modern minimal homewares storefront grounded in the uploaded Urdu logo.
+description: Modern minimal furniture storefront grounded in the uploaded Urdu logo.
 colors:
   slate: "#504c5e"
   ink: "#302d36"

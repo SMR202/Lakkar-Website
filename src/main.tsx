@@ -37,8 +37,8 @@ function Photo({
       alt={alt}
       {...props}
       onError={(e) => {
-        if (!e.currentTarget.src.endsWith("/lifestyle.webp"))
-          e.currentTarget.src = "/lifestyle.webp";
+        if (!e.currentTarget.src.endsWith("/furniture-room.jpg"))
+          e.currentTarget.src = "/furniture-room.jpg";
       }}
     />
   );
@@ -299,7 +299,7 @@ export default function App() {
         Skip to collection
       </a>
       <div className="announcement">
-        {site("announcement", "Objects for everyday living.")}
+        {site("announcement", "Furniture with character.")}
       </div>
       <header>
         <a className="brand" href="/" aria-label="Lakkar Home, home">
@@ -338,16 +338,16 @@ export default function App() {
         <section className="hero">
           <Photo
             className="hero-image"
-            src={site("heroImage", "/lifestyle.webp")}
-            alt="Wooden homewares arranged on a sunlit table"
+            src={site("heroImage", "/furniture-room.jpg")}
+            alt="Lakkar Home upholstered seating in a warm interior"
             fetchPriority="high"
           />
           <div className="hero-copy">
-            <h1>{site("heroTitle", "A little wood.\nA lot of warmth.")}</h1>
+            <h1>{site("heroTitle", "Furniture for\nthe way you live.")}</h1>
             <p>
               {site(
                 "heroText",
-                "Natural textures. Thoughtful details. Find a place for them in your everyday.",
+                "Distinctive tables, considered seating, and furniture that makes a room your own.",
               )}
             </p>
             <a className="button primary" href="#collection">
@@ -365,11 +365,13 @@ export default function App() {
 
         <section id="collection" className="collection">
           <div className="section-heading">
-            <h2>{site("collectionTitle", "Good things, naturally.")}</h2>
+            <h2>
+              {site("collectionTitle", "Find your next favourite piece.")}
+            </h2>
             <p>
               {site(
                 "collectionText",
-                "For your table, your corners, and the moments in between.",
+                "Explore furniture for living rooms, bedrooms, and the spaces in between.",
               )}
             </p>
           </div>
@@ -505,17 +507,19 @@ export default function App() {
         <section className="story" id="story">
           <div className="story-photo">
             <Photo
-              src={site("storyImage", "/lifestyle.webp")}
-              alt="The texture and warmth of wooden objects"
+              src={site("storyImage", "/furniture-table.jpg")}
+              alt="Lakkar Home round coffee table in a living room"
               loading="lazy"
             />
           </div>
           <div className="story-copy">
-            <h2>{site("storyTitle", "A home is in the little things.")}</h2>
+            <h2>
+              {site("storyTitle", "A room comes together, piece by piece.")}
+            </h2>
             <p>
               {site(
                 "storyText",
-                "The tray that holds your morning tea. The bowl at the centre of a gathering. A familiar corner, made your own.",
+                "A coffee table to gather around. A chair for your quiet corner. A bed to come home to. Discover furniture that brings comfort and character to your space.",
               )}
             </p>
             <a
@@ -577,7 +581,7 @@ export default function App() {
             Lakkar<small>H O M E</small>
           </span>
         </a>
-        <p>{site("tagline", "A little closer to home.")}</p>
+        <p>{site("tagline", "Furniture for a home that feels like you.")}</p>
         <div>
           {(["delivery", "returns", "privacy"] as const).map((p) => (
             <button
@@ -696,7 +700,7 @@ export default function App() {
                   {lines.map((i) => (
                     <div className="bag-line" key={i.id}>
                       <Photo
-                        src={i.product?.image || "/lifestyle.webp"}
+                        src={i.product?.image || "/furniture-room.jpg"}
                         alt={i.product?.name || "Unavailable piece"}
                       />
                       <div>

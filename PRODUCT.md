@@ -23,3 +23,7 @@ Verified products, photos, PKR currency assumption, delivery zones/rates, busine
 ## Accepted follow-ups
 
 Use Next.js. Modern minimal frontend. All missing business details editable in Google Sheets. Real product data supplied later; clearly marked samples for development.
+
+## Furniture positioning
+
+Owner confirmed furniture store. Instagram reviewed: tile tables, coffee tables, seating, beds and children's activity tables. Hero and story use original furniture photography from @lakkar.home, posts DBBMGYhNj3M and DPV0qK3jSaG. Real catalog remains owner supplied through Sheets.

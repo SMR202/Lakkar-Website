@@ -5,20 +5,21 @@ export const sample: Catalog = {
   ordersOpen: false,
   currency: "PKR",
   site: {
-    heroTitle: "A little wood.\nA lot of warmth.",
+    heroTitle: "Furniture for\nthe way you live.",
     heroText:
-      "Natural textures. Thoughtful details. Find a place for them in your everyday.",
-    heroImage: "/lifestyle.webp",
+      "Distinctive tables, considered seating, and furniture that makes a room your own.",
+    heroImage: "/furniture-room.jpg",
     logo: "/logo.jpeg",
     instagram: "https://www.instagram.com/lakkar.home/",
-    announcement: "Objects for everyday living.",
-    collectionTitle: "Good things, naturally.",
-    collectionText: "For your table, your corners, and the moments in between.",
-    storyTitle: "A home is in the little things.",
+    announcement: "Furniture with character.",
+    collectionTitle: "Find your next favourite piece.",
+    collectionText:
+      "Explore furniture for living rooms, bedrooms, and the spaces in between.",
+    storyTitle: "A room comes together, piece by piece.",
     storyText:
-      "The tray that holds your morning tea. The bowl at the centre of a gathering. A familiar corner, made your own.",
-    storyImage: "/lifestyle.webp",
-    tagline: "A little closer to home.",
+      "A coffee table to gather around. A chair for your quiet corner. A bed to come home to. Discover furniture that brings comfort and character to your space.",
+    storyImage: "/furniture-table.jpg",
+    tagline: "Furniture for a home that feels like you.",
   },
   whatsapp: "",
   policies: {
