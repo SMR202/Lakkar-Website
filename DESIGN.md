@@ -93,7 +93,7 @@ Desktop hero type uses the display token; the intermediate viewport uses (58px),
 
 ## Layout
 
-Desktop sections use (6%) horizontal gutters. The product grid has four columns, changing to two below (900px). At (640px), horizontal gutters become (20px), the hero separates copy from its lower photograph, and the story changes from two columns to a vertical composition. Mobile imagery keeps reserved aspect ratios. The bag and checkout share a right drawer (500px) wide on desktop and full width on mobile.
+Desktop sections use (6%) horizontal gutters. The collection uses a horizontal scroll-snap rail, with roughly three cards and a preview on desktop, two and a preview on tablet, and one and a preview on mobile. Native touch/trackpad scrolling, arrow controls and keyboard navigation reach every item. At (640px), horizontal gutters become (20px), the hero separates copy from its lower photograph, and the story changes from two columns to a vertical composition. Mobile imagery keeps reserved aspect ratios. The bag and checkout share a right drawer (500px) wide on desktop and full width on mobile.
 
 ## Elevation & Depth
 
@@ -101,7 +101,7 @@ Product cards remain flat and unboxed. Tonal section surfaces and photography es
 
 ## Shapes
 
-Buttons, images and fields use square geometry. Fine borders separate quantities and fields. Scrollbar thumbs have a small functional curve; controls do not inherit that curve.
+Product images use square aspect ratios with 16px rounded corners. Hero and story photographs also have 16px corners. Buttons and fields retain their existing geometry. Fine borders separate quantities and fields. Scrollbar thumbs have a small functional curve; controls do not inherit that curve.
 
 ## Components
 
@@ -135,3 +135,7 @@ The desktop header combines the original logo/wordmark, plain links and bag acti
 - **Don't** add decorative gradients or promotional badges to this restrained interface.
 - **Don't** turn product cards into elevated panels.
 - **Don't** treat sample products, prices or policies as verified business claims.
+
+## Collection scrolling
+
+Inspired by the horizontal collections at shopkeel.com. No autoplay; controls disable at each end. Arrow keys move one card, Home/End reach either end when the rail is focused. Search, category or sort changes reset to the beginning. Reduced-motion preferences use immediate scrolling. Catalog data continues to come from the Sheet.

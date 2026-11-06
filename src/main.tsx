@@ -1,5 +1,7 @@
 "use client";
 
+import { CollectionRail } from "./CollectionRail";
+
 import React, { useEffect, useRef, useState } from "react";
 
 import {
@@ -452,48 +454,53 @@ export default function App() {
             </div>
           )}
 
-          <div className="product-grid">
-            {products.map((p, i) => (
-              <article className="product-card" key={p.id}>
-                <button
-                  className="product-photo"
-                  onClick={() => {
-                    setProduct(p);
-                    setPanel("product");
-                  }}
-                  aria-label={"View " + p.name}
-                >
-                  <Photo src={p.image} alt={p.name} loading="lazy" />
-                  <span>
-                    Take a closer look <ArrowUpRight size={18} />
-                  </span>
-                </button>
-                <div className="product-meta">
-                  <div>
-                    <p className="category">{p.category}</p>
-                    <button
-                      className="product-name"
-                      onClick={() => {
-                        setProduct(p);
-                        setPanel("product");
-                      }}
-                    >
-                      {p.name}
-                    </button>
-                    <p className="price">{money(p.price)}</p>
-                  </div>
+          {products.length > 0 && (
+            <CollectionRail
+              count={products.length}
+              resetKey={`${category}:${search}:${sort}`}
+            >
+              {products.map((p, i) => (
+                <article className="product-card" key={p.id}>
                   <button
-                    className="add-button"
-                    disabled={!p.stock}
-                    aria-label={"Add " + p.name + " to bag"}
-                    onClick={() => add(p)}
+                    className="product-photo"
+                    onClick={() => {
+                      setProduct(p);
+                      setPanel("product");
+                    }}
+                    aria-label={"View " + p.name}
                   >
-                    {p.stock ? <Plus size={20} /> : <span>Sold out</span>}
+                    <Photo src={p.image} alt={p.name} loading="lazy" />
+                    <span>
+                      Take a closer look <ArrowUpRight size={18} />
+                    </span>
                   </button>
-                </div>
-              </article>
-            ))}
-          </div>
+                  <div className="product-meta">
+                    <div>
+                      <p className="category">{p.category}</p>
+                      <button
+                        className="product-name"
+                        onClick={() => {
+                          setProduct(p);
+                          setPanel("product");
+                        }}
+                      >
+                        {p.name}
+                      </button>
+                      <p className="price">{money(p.price)}</p>
+                    </div>
+                    <button
+                      className="add-button"
+                      disabled={!p.stock}
+                      aria-label={"Add " + p.name + " to bag"}
+                      onClick={() => add(p)}
+                    >
+                      {p.stock ? <Plus size={20} /> : <span>Sold out</span>}
+                    </button>
+                  </div>
+                </article>
+              ))}
+            </CollectionRail>
+          )}
           {catalog && !products.length && (
             <div className="load-state">
               <h3>No pieces found.</h3>

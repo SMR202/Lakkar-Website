@@ -1384,3 +1384,104 @@ h2 {
     line-height: 1.5;
   }
 }
+
+/* Collection: square photographs in a touch-friendly horizontal rail. */
+.collection-rail {
+  min-width: 0;
+}
+.collection-rail-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  margin: 18px 0 20px;
+  gap: 20px;
+}
+.collection-rail-toolbar p {
+  color: var(--muted);
+  font-size: 12px;
+}
+.rail-controls {
+  display: flex;
+  gap: 8px;
+}
+.rail-controls button {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  color: var(--ink);
+  transition: background 0.2s;
+}
+.rail-controls button:hover:not(:disabled) {
+  background: #eeeae4;
+}
+.rail-controls button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.collection-rail .product-grid {
+  display: grid;
+  grid-template-columns: none;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 64px) / 3.2);
+  gap: 24px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 3px;
+  padding: 4px 3px 26px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--slate) var(--line);
+}
+.collection-rail .product-card {
+  display: block;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+.collection-rail .product-photo {
+  aspect-ratio: 1;
+  border-radius: 16px;
+}
+.collection-rail .product-meta {
+  gap: 12px;
+}
+.hero-image,
+.story-image,
+.story > img {
+  border-radius: 16px;
+}
+@media (max-width: 900px) {
+  .collection-rail .product-grid {
+    grid-auto-columns: calc((100% - 36px) / 2.2);
+    gap: 20px;
+  }
+}
+@media (max-width: 640px) {
+  .collection-rail .product-grid {
+    grid-auto-columns: 84%;
+    gap: 16px;
+    padding-bottom: 22px;
+  }
+  .collection-rail-toolbar {
+    margin: 12px 0 16px;
+    gap: 10px;
+  }
+  .collection-rail-toolbar p {
+    font-size: 11px;
+  }
+  .rail-controls button {
+    width: 44px;
+    height: 44px;
+  }
+  .collection-rail .product-name {
+    font-size: 16px;
+  }
+}
+.story-photo {
+  border-radius: 16px;
+  overflow: hidden;
+}
